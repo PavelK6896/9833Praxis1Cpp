@@ -14,9 +14,43 @@ void m1()
 
 void m2()
 {
+
+//& сылка
+//* указатель
+
+    char c = 'c';
+    char *a;
+    a = &c;
+
+    char *a4 = &c;
+
+    int *a2;
+    long double *a3;
+
+
+
+   std::cout << "c:\t\t" << c << "\t\ta:\t\t" << a << "\ta2\t" << a2 << std::endl;
+
+
     //размер памяти в байтах
     std::cout << "bool:\t\t" << sizeof(bool) << " bytes" << std::endl;
-    std::cout << "char:\t\t" << sizeof(char) << " bytes" << std::endl;
+    std::cout << "char:\t\t" << sizeof(char) << " bytes" << std::endl; //1 bytes
+    std::cout << "char:\t\t" << sizeof(c) << " bytes" << std::endl; //1 bytes
+    std::cout << "char*&:\t\t" << sizeof(a) << " bytes" << std::endl;
+    std::cout << "a2:\t\t" << sizeof(a2) << " bytes" << std::endl;
+    std::cout << "a3:\t\t" << sizeof(a3) << " bytes" << std::endl;
+
+    //char *a4 = &c;
+    //char *c означает, что c является указателем. Значение, на которое указывает c, является символом.
+    //Так что вы можете сказать char a = *c .
+    // const с другой стороны, в этом примере говорится, что значение c указывает на то, что его нельзя изменить.
+    //Итак, вы можете сказать c = &a , но не можете сказать *c = 'x' .
+    //Если вам нужен константный указатель на константный символ, который вы должны были бы сказать const char* const c .
+
+    std::cout << "char*:\t\t" << sizeof(char*) << " bytes" << std::endl; //8 bytes
+    std::cout << "char**:\t\t" << sizeof(char**) << " bytes" << std::endl; //8 bytes
+    std::cout << "char***:\t\t" << sizeof(char***) << " bytes" << std::endl; //8 bytes
+    std::cout << "char****:\t\t" << sizeof(char****) << " bytes" << std::endl; //8 bytes
     std::cout << "wchar_t:\t" << sizeof(wchar_t) << " bytes" << std::endl;
     std::cout << "char16_t:\t" << sizeof(char16_t) << " bytes" << std::endl;  
     std::cout << "char32_t:\t" << sizeof(char32_t) << " bytes" << std::endl;    
